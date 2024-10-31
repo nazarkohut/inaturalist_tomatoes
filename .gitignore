@@ -1,0 +1,4 @@
+.venv
+.idea
+private_notes/
+__pycache__/

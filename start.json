@@ -1,0 +1,60 @@
+{
+  "AWS_STEP_FUNCTIONS_STARTED_BY_EXECUTION_ID.$": "$$.Execution.Id",
+  "licence_changing_params_list": [
+    {
+      "verifiable": "true",
+      "order_by": "id",
+      "order": "desc",
+      "page": "1",
+      "spam": "false",
+      "photo_license": "cc0",
+      "photos": "true",
+      "taxon_id": "51737",
+      "locale": "en-US",
+      "per_page": "5",
+      "return_bounds": "true"
+    },
+    {
+      "verifiable": "true",
+      "order_by": "id",
+      "order": "desc",
+      "page": "1",
+      "spam": "false",
+      "photo_license": "cc-by",
+      "photos": "true",
+      "taxon_id": "51737",
+      "locale": "en-US",
+      "per_page": "5",
+      "return_bounds": "true"
+    },
+    {
+      "verifiable": "true",
+      "order_by": "id",
+      "order": "desc",
+      "page": "1",
+      "spam": "false",
+      "photo_license": "cc-by-nc",
+      "photos": "true",
+      "taxon_id": "51737",
+      "locale": "en-US",
+      "per_page": "5",
+      "return_bounds": "true"
+    },
+    {
+      "verifiable": "true",
+      "order_by": "id",
+      "order": "desc",
+      "page": "1",
+      "spam": "false",
+      "photo_license": "cc-by-nc-sa",
+      "photos": "true",
+      "taxon_id": "51737",
+      "locale": "en-US",
+      "per_page": "5",
+      "return_bounds": "true"
+    }
+  ]
+}
+
+
+
