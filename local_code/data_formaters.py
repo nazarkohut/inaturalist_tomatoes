@@ -1,3 +1,5 @@
+import copy
+
 from local_code.utils.url_transformers import replace_square_image_with_original
 
 
@@ -12,6 +14,58 @@ from local_code.utils.url_transformers import replace_square_image_with_original
 #             flat_data.append(flat_entry)
 #
 #     return flat_data
+
+def single_table_format_inaturalist_data(result: list[dict], curr_id: int):
+    parsed_objects = list()
+    for res in result:
+        curr_observation_data = {
+            'observation_id': curr_id,
+            # date and time related fields
+            'time_observed_at_date': res['time_observed_at'],
+            'observed_on_date': res['observed_on_details']['date'],
+            'observed_on_year': res['observed_on_details']['year'],
+            'observed_on_month': res['observed_on_details']['month'],
+            'observed_on_week': res['observed_on_details']['week'],
+            'observed_on_day': res['observed_on_details']['day'],
+            'observed_on_hour': res['observed_on_details']['hour'],
+
+            # location fields
+            'location': res['location'],
+            'place_guess': res['place_guess'],
+
+            # time zone related fields
+            'observed_time_zone': res['observed_time_zone'],
+            'created_time_zone': res['created_time_zone'],
+            'time_zone_offset': res['time_zone_offset'],
+
+            # names related fields
+            'english_common_name': res['taxon']['english_common_name'],
+            'preferred_common_name': res['taxon']['preferred_common_name'],
+            'taxon_name': res['taxon']['name'],
+            'description': res['description'],
+
+            # identifications info
+            'identifications_most_disagree': res['identifications_most_disagree'],
+            'identifications_most_agree': res['identifications_most_agree'],
+
+            # other
+            'quality_grade': res['quality_grade'],
+            'uri': res['uri'],  # just in case we need to check out additional info
+        } # dbeaver, duckDB(plugin)
+
+        for photo_data in res['photos']:
+            # photo_data
+            curr_observation_photo_record = copy.deepcopy(curr_observation_data)
+
+            curr_observation_photo_record['image_url'] = photo_data['url']
+            curr_observation_photo_record['original_image_url'] = replace_square_image_with_original(photo_data['url'])
+            curr_observation_photo_record['original_width'] = photo_data['original_dimensions']['width']
+            curr_observation_photo_record['original_height'] = photo_data['original_dimensions']['height']
+            curr_observation_photo_record['license_code'] = photo_data['license_code']
+            curr_observation_photo_record['attribution'] = photo_data['attribution']
+            parsed_objects.append(copy.deepcopy(curr_observation_photo_record))
+
+    return parsed_objects
 
 
 def format_inaturalist_data(result: list[dict], curr_id: int):
