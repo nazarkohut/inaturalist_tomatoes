@@ -63,7 +63,7 @@ for page_number in range(1, 3):
 
         else:
             print(f"Server returned status code: {response.status_code}! In main for loop. Sleeping for 120 seconds")
-            failed_licence_urls.append({"url": FORMED_API_URL, "status_code": response.status_code})
+            failed_licence_urls.append({"url": FORMED_API_URL, "status_code": response.status_code}) # TODO: fix this part(add parameters) and write restoring script on file from duckdb and dbeaver
             time.sleep(120)
 
 
