@@ -39,8 +39,8 @@ def single_table_format_inaturalist_data(result: list[dict], curr_id: int):
             'time_zone_offset': res['time_zone_offset'],
 
             # names related fields
-            'english_common_name': res['taxon']['english_common_name'],
-            'preferred_common_name': res['taxon']['preferred_common_name'],
+            'english_common_name': res['taxon'].get('english_common_name', None),
+            'preferred_common_name': res['taxon'].get('preferred_common_name', None),
             'taxon_name': res['taxon']['name'],
             'description': res['description'],
 
