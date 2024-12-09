@@ -4,6 +4,8 @@ TYPE = "observations"
 FORMED_API_URL = f"{API_URL_BASE}{API_VERSION}/{TYPE}"
 
 LICENCES_TO_USE = ["cc0", "cc-by", "cc-by-nc", "cc-by-nc-sa"]
+# TODO: move fully to config or use it only as descriptive field here
+# TODO: Reconsider what needs to be in this file and what in configs
 
 TOMATO_TAXON_ID = 51737
 POTATO_BLIGHT_TAXON_ID = 53860

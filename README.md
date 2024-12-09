@@ -17,3 +17,24 @@ At the moment parsing is performed in one machine and personal computer.
 Some of parsed files are empty and only include column names which helps with future processing.
 
 In order to analyze data and perform operations quickly we use DBeaver and DuckDB.
+
+#### How to use?
+
+##### Get data from Inaturalist
+Current pipeline is semi-automatic, 
+meaning we go to Inaturalist for taxon_id and other fields, 
+adjust config for one of the diseases, species, etc., and 
+run data retrieval for this query only.
+
+**Steps to run data retrival script:**
+1. Adjust global config in local code as well as data_preprocessors config.
+2. Run `main.py` to parse and slightly preprocess data.
+3. Use DBeaver and DuckDB to get merged parquet.
+
+**Possible improvements:** integrate data_preprocessors into `parse.py` script.
+
+**Download to local and Upload to Roboflow:**
+1. Open roboflow directory and adjust upload_config.py to suit your needs.
+2. Run `download_images.py` to download images to local machine.
+3. Run `upload_images.py` to upload images to roboflow repository.
+
