@@ -3,3 +3,5 @@
 private_notes/
 __pycache__/
 local_code/raw_data/
+local_code/roboflow/upload_config.py
+local_code/roboflow/downloaded_images/

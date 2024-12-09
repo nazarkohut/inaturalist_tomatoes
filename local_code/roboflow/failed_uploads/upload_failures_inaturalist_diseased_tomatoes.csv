@@ -1,0 +1,2 @@
+image_path,status,error_message
+downloaded_images/42700106_285_potato_blight_phytophthora_infestans_2020_4_20_12_africa_johannesburg_pardubice_pardubicky_okres_pardubice_CZ.jpg,Failure,'str' object has no attribute 'get'
